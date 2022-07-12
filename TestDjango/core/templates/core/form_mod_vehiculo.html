@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <title>modificar</title>
+</head>
+<body>
+    <div>
+        <h1>modificar vehiculos</h1>
+    </div>
+<form method="post" action="" id="formulario">
+    {% csrf_token %}
+    <div class="form-group">
+    {{ form.as_table}}
+    </div>
+
+    <input type="submit" class="btn btn-danger" id="enviar" value="modificar">
+    <input type="reset" class="btn btn primary" id="limpiar" value="limpiar">
+    <div type="error" class="alert alert-danger" role="alert"></div>
+
+
+    
+
+</form>
+<div class="alert alert-success" role="alert">
+    {{mensaje}}
+
+<div class="row">
+<table class="table">
+    <thead>
+    <tr><th scope="col">patente</th><th scope="col">marca</th>
+        <th scope="col">modelo</th><th scope="col">opciones</th> 
+    </tr>
+</thead>
+<tbody>
+    {% for ve in vehiculos %}
+    <tr><td> {{ve.patente}}</td><td> {{ve.marca}}</td>
+        <td> {{ve.modelo}}</td>
+        <td><a href="{% url 'form_mod_vehiculo' ve.patente %}">modificar</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+
+
+</table>
+</div>
+</body>
+</html>

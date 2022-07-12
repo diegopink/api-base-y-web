@@ -6,7 +6,26 @@
     <title>pagina aesthetic</title>
 </head>
 <body>
+    <div>
     <h1> Pagina Web Para Sergio Web</h1>
+    </div>
+    <div class="row">
+    <table border=1>
+        <tr><td>patente</td><td>marca</td><td>modelo</td></tr>
+        {%for ve in vehiculos %}
+        <tr><td>{{ve.patente}}</td><td>{{ve.marca}}</td>
+            <td>{{ve.modelo}}</td></tr>
+            <td><a href="{% url 'form_mod_vehiculo' ve.patente %}">modificar</a></td>
+            <td><a href="{% url 'form_mod_vehiculo' ve.patente %}">eliminar</a></td>
+        </tr>
+        {% endfor  %}
+
+
+
+    </table>
+    </div>
+    <a href="{% url 'form_vehiculo'%}">nuevo vehiculos</a>
+    <br><br>
 
     <div>
         <img src="{% static 'core/img/xd.png'%}" >

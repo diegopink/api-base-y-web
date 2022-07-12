@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>registros</title>
+    <h1>crear vehiculos</h1>
+    <div>
+
+        <form method="post" action="" id="formulario">
+            {% csrf_token %}
+            <div class="form-group">
+            {{ form.as_table}}
+            </div>
+
+
+            <input type="submit" class="btn btn-danger" id="enviar" value="enviar">
+            <input type="reset" class="btn btn primary" id="limpiar" value="limpiar">
+            <div type="error" class="alert alert-danger" role="alert"></div>
+
+
+            
+      
+        </form>
+        <div class="alert alert-success" role="alert">
+            {{mensaje}}
+        </div>
+    </div>
+</head>
+<body>
+    
+</body>
+</html>
