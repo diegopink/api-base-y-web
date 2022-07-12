@@ -11,7 +11,8 @@
     </div>
     <div class="row">
     <table border=1>
-        <tr><td>patente</td><td>marca</td><td>modelo</td></tr>
+        <tr><th scope="col">patente</th><th scope="col">marca</th>
+            <th scope="col">modelo</th><th scope="col">opciones</th> 
         {%for ve in vehiculos %}
         <tr><td>{{ve.patente}}</td><td>{{ve.marca}}</td>
             <td>{{ve.modelo}}</td></tr>
