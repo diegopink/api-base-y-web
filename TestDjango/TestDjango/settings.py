@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'rest_vehiculo',
+    'rest_framework.authtoken',
 
 ]
 
@@ -70,6 +71,11 @@ TEMPLATES = [
         },
     },
 ]
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'TestDjango.wsgi.application'
 
@@ -129,3 +135,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
